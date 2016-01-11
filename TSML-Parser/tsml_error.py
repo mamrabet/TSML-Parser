@@ -1,0 +1,2 @@
+class TSMLerror(Exception):
+    pass

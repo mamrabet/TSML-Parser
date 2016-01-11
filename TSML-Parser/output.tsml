@@ -1,0 +1,23 @@
+class Elevator
+	state C.F1 & D.open, C.UP2 & D.closed, C.UP3 & D.closed, C.UP4 & D.closed, C.F2 & D.open, C.F3 & D.open, C.F4 & D.open, C.DOWN1 & D.closed, C.DOWN2 & D.closed, C.DOWN3 & D.closed;
+	event D1F2, D1F3, D1F4, D2F3, D2F4, D3F4, U2F1, U3F1, U3F2, U4F1, U4F2, U4F3, AU2, AU3, AU4, AD1, AD2, AD3;
+	transition
+		U2F1: C.F1 & D.open -> C.UP2 & D.closed;
+		U3F1: C.F1 & D.open -> C.UP3 & D.closed;
+		U4F1: C.F1 & D.open -> C.UP4 & D.closed;
+		AU2: C.UP2 & D.closed -> C.F2 & D.open;
+		AU3: C.UP3 & D.closed -> C.F3 & D.open;
+		AU4: C.UP4 & D.closed -> C.F4 & D.open;
+		D1F2: C.F2 & D.open -> C.DOWN1 & D.closed;
+		U3F2: C.F2 & D.open -> C.UP3 & D.closed;
+		U4F2: C.F2 & D.open -> C.UP4 & D.closed;
+		D1F3: C.F3 & D.open -> C.DOWN1 & D.closed;
+		D2F3: C.F3 & D.open -> C.DOWN2 & D.closed;
+		U4F3: C.F3 & D.open -> C.UP4 & D.closed;
+		D1F4: C.F4 & D.open -> C.DOWN1 & D.closed;
+		D2F4: C.F4 & D.open -> C.DOWN2 & D.closed;
+		D3F4: C.F4 & D.open -> C.DOWN3 & D.closed;
+		AD1: C.DOWN1 & D.closed -> C.F1 & D.open;
+		AD2: C.DOWN2 & D.closed -> C.F2 & D.open;
+		AD3: C.DOWN3 & D.closed -> C.F3 & D.open;
+end

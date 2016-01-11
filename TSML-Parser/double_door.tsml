@@ -1,0 +1,18 @@
+block DoubleDoor
+    class Door
+        state open, close;
+        event opening, closing;
+        transition
+            opening: close -> open;
+            closing: open -> close;
+    end
+
+    Door A, B;
+    event closing;
+    synchronization
+        A.opening;
+        B.opening;
+        closing : A.closing & B.closing;
+    observer
+        Open: A.open and B.open;
+end
